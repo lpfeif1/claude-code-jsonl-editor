@@ -145,6 +145,12 @@ export function App() {
     setTimeout(() => {
       checkServerMode();
     }, 1000);
+    
+    // 追加で5秒後にも再チェック（デバッグ用）
+    setTimeout(() => {
+      console.log('[Client] Rechecking server mode...');
+      checkServerMode();
+    }, 5000);
   }, []);
   
   const handleFileLoad = (event: Event) => {
@@ -219,6 +225,12 @@ export function App() {
       <header>
         <h1>Claude Code JSONL Editor</h1>
         <div class="controls">
+          <span class="debug-info">
+            {isServerMode ? `Server: ${serverPort}` : 'Client-only'}
+          </span>
+          {!isServerMode && (
+            <button onClick={checkServerMode} class="reconnect-btn">Reconnect</button>
+          )}
           {isServerMode ? (
             <>
               {availableFiles.length > 0 && (

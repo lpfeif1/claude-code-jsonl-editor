@@ -169,3 +169,25 @@ select {
   color: #374151;
   font-size: 0.875rem;
 }
+
+.debug-info {
+  font-size: 0.75rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.reconnect-btn {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+}
+
+.reconnect-btn:hover {
+  background: #d97706;
+  border: none;
+}
