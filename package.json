@@ -1,8 +1,16 @@
 {
-  "name": "jsonl-editor",
-  "private": true,
-  "version": "0.0.0",
+  "name": "claude-code-jsonl-editor",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
+  "description": "Interactive JSONL editor for Claude Code conversation files",
+  "keywords": ["jsonl", "claude", "editor", "conversation", "interactive"],
+  "author": "Claude Code Community",
+  "license": "MIT",
+  "bin": {
+    "jsonl-editor": "./start.js"
+  },
+  "main": "./start.js",
   "scripts": {
     "start": "node start.js",
     "dev": "node start.js",

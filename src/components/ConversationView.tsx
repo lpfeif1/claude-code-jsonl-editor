@@ -10,9 +10,9 @@ interface ConversationViewProps {
 
 export function ConversationView({ messages, onEdit, onDelete, onCopy }: ConversationViewProps) {
   return (
-    <div className="conversation-view">
+    <div class="conversation-view">
       <h2>Conversation</h2>
-      <div className="messages-container">
+      <div class="messages-container">
         {messages.map((entry) => (
           <MessageBubble
             key={entry.uuid}

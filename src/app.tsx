@@ -15,12 +15,17 @@ export function App() {
     // 複数のポートを試す（3001から3010まで）
     for (let port = 3001; port <= 3010; port++) {
       try {
-        const response = await fetch(`http://localhost:${port}/api/config`);
+        const response = await fetch(`http://localhost:${port}/api/config`, {
+          method: 'GET',
+          headers: { 'Accept': 'application/json' }
+        });
         if (response.ok) {
+          console.log(`[Client] Found server on port ${port}`);
           return port;
         }
       } catch (error) {
         // このポートでは応答なし、次を試す
+        console.log(`[Client] Port ${port} not available:`, (error as Error).message);
       }
     }
     return null;
@@ -97,9 +102,18 @@ export function App() {
       
       const response = await fetch(`http://localhost:${serverPort}/api/files/${currentFile}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify({ content })
       });
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('[Client] Server response error:', errorText);
+        throw new Error(`HTTP ${response.status}: ${errorText}`);
+      }
       
       const result = await response.json();
       if (result.success) {
@@ -127,7 +141,10 @@ export function App() {
   };
   
   useEffect(() => {
-    checkServerMode();
+    // サーバーが起動するまで少し待つ
+    setTimeout(() => {
+      checkServerMode();
+    }, 1000);
   }, []);
   
   const handleFileLoad = (event: Event) => {

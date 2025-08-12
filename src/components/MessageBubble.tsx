@@ -32,34 +32,34 @@ export function MessageBubble({ entry, onEdit, onDelete, onCopy }: MessageBubble
   };
   
   return (
-    <div className={`message-bubble ${isUser ? 'user' : 'assistant'}`}>
-      <div className="message-header">
-        <span className="role">{entry.type}</span>
-        <span className="timestamp">{new Date(entry.timestamp).toLocaleTimeString()}</span>
+    <div class={`message-bubble ${isUser ? 'user' : 'assistant'}`}>
+      <div class="message-header">
+        <span class="role">{entry.type}</span>
+        <span class="timestamp">{new Date(entry.timestamp).toLocaleTimeString()}</span>
       </div>
       
       {isEditing ? (
-        <div className="edit-mode">
+        <div class="edit-mode">
           <textarea
             value={editContent}
             onChange={(e) => setEditContent((e.target as HTMLTextAreaElement).value)}
-            className="edit-textarea"
+            class="edit-textarea"
           />
-          <div className="edit-actions">
+          <div class="edit-actions">
             <button onClick={handleSave}>Save</button>
             <button onClick={handleCancel}>Cancel</button>
           </div>
         </div>
       ) : (
-        <div className="message-content">
+        <div class="message-content">
           <pre>{content}</pre>
         </div>
       )}
       
-      <div className="message-actions">
+      <div class="message-actions">
         <button onClick={handleEdit} disabled={isEditing}>Edit</button>
         <button onClick={() => onCopy(content)}>Copy</button>
-        <button onClick={() => onDelete(entry.uuid)} className="delete">Delete</button>
+        <button onClick={() => onDelete(entry.uuid)} class="delete">Delete</button>
       </div>
     </div>
   );

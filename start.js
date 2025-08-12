@@ -32,6 +32,9 @@ program
   .helpOption('-h, --help', 'Display help information')
   .addHelpText('after', `
 ${chalk.cyan('Examples:')}
+  ${chalk.gray('# Start with default samples')}
+  ${chalk.green('jsonl-editor')}
+  
   ${chalk.gray('# Start with JSONL file')}
   ${chalk.green('jsonl-editor -p ./conversation.jsonl')}
   
@@ -92,8 +95,19 @@ if (options.jsonlPath) {
     process.exit(1);
   }
 } else {
-  log.warn('No JSONL path specified - running in demo mode');
-  log.info(`Use ${chalk.cyan('--jsonl-path <path>')} to edit real files`);
+  // samplesフォルダがある場合はデフォルトで使用
+  try {
+    const samplesPath = path.resolve('./samples');
+    await fs.access(samplesPath);
+    const stat = await fs.stat(samplesPath);
+    if (stat.isDirectory()) {
+      options.jsonlPath = samplesPath;
+      log.success(`Using default samples directory: ${chalk.cyan(samplesPath)}`);
+    }
+  } catch (error) {
+    log.warn('No JSONL path specified and no samples/ directory found');
+    log.info(`Create a ${chalk.cyan('samples/')} directory or use ${chalk.cyan('--jsonl-path <path>')} to edit files`);
+  }
 }
 
 // 共有変数
