@@ -2,6 +2,40 @@
 
 🚀 Interactive JSONL editor for Claude Code conversation files with real-time file system synchronization.
 
+![Claude Code JSONL Editor Screenshot](screenshot.png)
+
+## Why? Core Concept & Philosophy
+
+**Efficient Prompt Engineering Through Conversation Editing**
+
+Editing Claude Code logs (JSONL files) makes prompt engineering significantly more efficient through a powerful technique: **output modification**. This approach enables infinite iteration and refinement of AI interactions without starting from scratch.
+
+### The Philosophy
+
+Traditional prompt engineering requires:
+1. Write prompt → Get response → Analyze → Rewrite entire prompt → Repeat
+
+Our approach enables:
+1. Write prompt → Get response → **Edit the response directly** → Continue conversation → Infinite refinement
+
+### Why This Works
+
+- **Context Preservation**: By editing assistant responses in the conversation log, you maintain the full context while perfecting the output
+- **Iterative Refinement**: Transform mediocre responses into perfect ones without losing conversation flow  
+- **Prompt Engineering Acceleration**: Test different response styles and approaches by editing outputs, then use successful patterns in future prompts
+- **Training Data Creation**: Build high-quality conversation datasets by refining real interactions
+- **Debugging Conversations**: Fix errors or improve responses retroactively to understand what works
+
+### Practical Applications
+
+- **Template Creation**: Edit responses to create reusable conversation templates
+- **Response Quality Control**: Perfect Claude's outputs for documentation or examples
+- **Conversation Branching**: Edit responses to explore different conversation paths
+- **Prompt Pattern Discovery**: Identify what response styles work best for specific use cases
+- **Knowledge Base Building**: Curate high-quality Q&A pairs from real interactions
+
+By making conversation editing as simple as chat editing, this tool transforms how you work with AI conversations - from linear interactions to iterative masterpieces.
+
 ## Features
 
 - 📝 **Interactive Chat Interface** - Edit conversations in a familiar chat-style UI
@@ -12,23 +46,64 @@
 - 🎨 **Beautiful CLI** - Colorful, informative command-line interface
 - 🔒 **Safe Operations** - Automatic backup creation before saves
 
-## Quick Start
+## Installation
+
+### One-Line Install (Recommended)
 
 ```bash
+curl -fsSL https://raw.githubusercontent.com/anthropics/claude-code-jsonl-editor/main/install.sh | bash
+```
+
+After installation, reload your shell or add `~/.local/bin` to your PATH:
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+### Manual Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/anthropics/claude-code-jsonl-editor.git
+cd claude-code-jsonl-editor
+
 # Install dependencies
 npm install
 
-# Start with default samples directory
+# Start the application
 npm start
+```
+
+## Quick Start
+
+```bash
+# Start with default samples directory
+jsonl-editor
 
 # Start with specific file
-npm start -- -p ./conversation.jsonl
+jsonl-editor -p ./conversation.jsonl
 
 # Start with directory
-npm start -- -p ./conversations
+jsonl-editor -p ./conversations
 
 # Expose to network
-npm start -- -p ./data --expose
+jsonl-editor --expose
+```
+
+## Upgrading
+
+```bash
+# Using the same install command will upgrade existing installation
+curl -fsSL https://raw.githubusercontent.com/anthropics/claude-code-jsonl-editor/main/install.sh | bash
+```
+
+## Uninstalling
+
+```bash
+# Download and run uninstall script
+curl -fsSL https://raw.githubusercontent.com/anthropics/claude-code-jsonl-editor/main/uninstall.sh | bash
+
+# Or if you have the repository
+bash uninstall.sh
 ```
 
 ## CLI Options
