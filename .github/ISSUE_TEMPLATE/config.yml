@@ -1,0 +1,25 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Documentation & Help
+    url: https://github.com/yuis-ice/claude-code-jsonl-editor/blob/main/README.md
+    about: Check the README for installation, usage, and troubleshooting
+
+  - name: 💬 General Discussion
+    url: https://github.com/yuis-ice/claude-code-jsonl-editor/discussions
+    about: Ask questions, share ideas, or discuss prompt engineering techniques
+
+  - name: 🚀 Feature Ideas & Feedback
+    url: https://github.com/yuis-ice/claude-code-jsonl-editor/discussions/categories/ideas
+    about: Share feature ideas and get community feedback before opening a formal request
+
+  - name: 🏗️ Development Discussion
+    url: https://github.com/yuis-ice/claude-code-jsonl-editor/discussions/categories/development
+    about: Technical discussions about implementation, architecture, and contributions
+
+  - name: 📖 Show & Tell
+    url: https://github.com/yuis-ice/claude-code-jsonl-editor/discussions/categories/show-and-tell
+    about: Share your prompt engineering workflows, templates, and success stories
+
+  - name: ❓ Q&A Support
+    url: https://github.com/yuis-ice/claude-code-jsonl-editor/discussions/categories/q-a
+    about: Get help with setup, usage questions, and troubleshooting from the community
